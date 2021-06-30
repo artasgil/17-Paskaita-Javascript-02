@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript </title>
+</head>
+
+<body>
+    <script>
+
+        "use strict"
+        var x, a, suma;
+        x = 5;
+        a = 3;
+        suma = a + x;
+
+        console.log(suma);
+
+        var tekstas = "as esu tekstas";
+        var skaicius = 5;
+
+        console.log(tekstas + skaicius); //kad jie pavirsta i teksta
+        console.log(tekstas * skaicius); // 
+
+        // Lygybe - priskyrimas
+        x = a; // x=3 << a pavrista i virsuje buvusi x t.y. 3
+
+        //Suma
+        x += 5; // x=x+5  x=3+5=8
+        console.log(x);
+
+        //Skirtumas
+        x -= 18; // x= x-18   x=8-18=-10
+        console.log(x);
+
+        //Daugyba
+        x *= 10; // x=x *10  x=-10*10=-100
+        console.log(x);
+
+        //Dalyba
+        x /= -10;
+        console.log(x); // x=x/(-10) x=-100/(-10)=10
+
+        //Liekana
+        x %= a; //x=x%a x=10%3 = 1
+        console.log(x);
+
+        //Laipsniu
+        x **= 19; // x=x**19-1**19-1;
+        console.log(x);
+
+
+        //IFAI - salyginiai sakiniai
+        var skaicius = 0;
+
+        // ar skaicius daugiau uz 0? Jei taip - padauginti is 2, jei ne padalinti is 2
+
+        // >
+        // <
+        // >=
+        // <=
+        // ==   (reiskia lygu)
+        // !=   (reiskia nelygu)
+
+        // Jeigu skaicius = 0, salyga neatitinka, tuomet pereina i false ir else isveda salyga.
+        if (skaicius > 0) {
+            //Kodas, kuris vykdomas tada, kada salyga yra igyvendinama
+            skaicius *= 2;
+            console.log("Skaicius yra didesnis uz 0: " + skaicius);
+        } else {
+            skaicius /= 2;
+            console.log("Skaicius yra mazesnis uz 0: " + skaicius);
+        }
+
+        var skaicius="labas";
+        // If else su 0 2 salygas tikrinam
+        if (skaicius > 0) {
+            //Kodas, kuris vykdomas tada, kada salyga yra igyvendinama
+            skaicius *= 2;
+            console.log("Skaicius yra didesnis uz 0: " + skaicius);
+        } else if (skaicius < 0) {
+            skaicius /= 2;
+            console.log("Skaicius yra mazesnis uz 0: " + skaicius);
+        } else if (skaicius == 0) {
+            console.log("Skaicius yra 0");
+        } else {
+            console.log("Skaicius net neskaicius")
+        }
+
+
+        // Patirinkite ar skaicius lyginis ar ne ir isvesti informacija
+        // Jei skaicius % 2 = 0 Vadinasi skaicius lyginis
+        // Jei skaicius % 2 != 0 Vadinasi skaicius yra nelyginis
+        // 0 - jis nei lyginis nei nelyginis
+
+
+        // Su 0 kyla problemos, kadangi 0 % 2 == 0 liekana ir yra naudojama pirma salyga, kad skaicius lyginis, vadinasi pacioj pradzioj turim patikrinti, ar skaicius == 0.
+        var skaicius = 18;
+        
+        if (skaicius == 0) {
+            console.log("Skaicius yra lygus 0");
+        } else if (skaicius % 2 == 0) {
+            console.log("Skaicius yra lyginis");
+        } else if (skaicius % 2 !=0) {
+            console.log("Skaicius yra nelyginis");
+        } else {
+            console.log("Skaicius net ne skaicius");
+        }
+
+
+        // Trizenklio skaiciaus skaitmenis priskirti atskiram kintamajam. Jei siu skaitmenu suma yra daugiau nei 10,
+        //skaiciai sudauginami, kitu atveju - kiekvienas skaicius padalinamas is 3.
+
+        skaicius = 658;
+        var a,b,c;
+        // a- pirmasis skaitmuo iamnt is kaires
+        // b - vidurinysis skaitmuo
+        // c - paskutinis skaitmuo imant is kaires
+        a = parseInt(skaicius/100); //  658 / 100 panaikinam liekana = 6
+        b = parseInt(skaicius % 100 /10); // 
+        c = skaicius % 10; // 658 % 10 liekana 8. Paskutinis skaitmuo visada atlieka.
+
+        console.log(a);
+        console.log(b);
+        console.log(c);
+
+        var suma;
+        suma = a + b + c;
+
+        if (suma > 10) {
+            var sudaugintiSk;    //Idedant ir deklaruojant var if'e, jis ir susikurs, jeigu bus tenkinama salyga
+            sudaugintiSk = a * b * c;
+        }   else {
+            a /= 3;
+            b /= 3;
+            c /= 3;
+        }
+
+        console.log("Pirmas skaitmuo " + a);
+        console.log("Vidurinis skaitmuo " + b);
+        console.log("Paskutinis skaitmuo " + c);
+        console.log("Skaitmenu suma " + suma);
+        console.log("Skaitmenu sandauga " + sudaugintiSk);
+
+        // a = 6
+        // b = 5
+        // c = 8
+
+
+
+        // Patikrinti, ar is triju krastiniu galima sudaryti trikampi.
+
+        let k1, k2, k3;
+        k1 = 3;
+        k2 = 4;
+        k3 = 5;
+
+        // Salygos sakinys: 
+        // Jeigu k1 + k2 > k3 ir k2 + k3 > k1 ir k1 + k3 > k2
+        // Visos salygos turi buti true, o jei nors vians falase, negalime sudaryti trikampio
+
+        //BULL BAZINIS PRINCIPAS: 2:09 paskaitos laikas.
+        // &&(and) ir || (or)
+        // && - logine daugyba
+        // || - logine sudetis
+        // salyga - true arba false reiksmes. true true true, false false
+        // true = 1
+        // false = 0
+
+        // 1 && 1 = 1(true)
+        // 1 && 0 = 0(false)
+        // 1 && 1 && 1 = 1(true) <<Nes vienetas - visas salygas tenkina, kai susidaugina)
+        // 1 && 0 && 1 = 0(false) <<Nes salygoje yra 0, ka reiskia 1*0*1 = 0
+        // 0 && 1 && 1 = 0(flase)  <<Taippat gaunasi 0*1*1=0, netenkina
+
+        //Kad susidarytu trikampis, turi tenknti visas 3 salygas
+ 
+        if((k1 + k2 > k3) && (k2 + k3 > k1) && (k1 + k3 > k2)) {
+            console.log("Trikampi sudaryti galima");
+        } else {
+            console.log("Trikampio sudaryti negalime");
+        } 
+
+
+        // Suprogramuoti skripta, kuris rastu didziausia skaiciu is dvieju aprasytu
+
+        var x = 0;
+        var y = 22;
+
+        if (x > y) {
+            console.log( x + " daugiau uz " + y);
+        } else if (y > x) {
+            console.log( y + " daugiau uz " + x);
+        } else {
+            console.log("Abu kintamieji lygus");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
